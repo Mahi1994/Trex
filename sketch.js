@@ -69,7 +69,7 @@ function setup() {
 
   
   trex.setCollider("rectangle",0,0,trex.width,trex.height);
-  trex.debug = true
+  trex.debug = false
   
   score = 0;
   
@@ -94,7 +94,7 @@ function draw() {
     
     ground.velocityX = -(4 + 3* score/100)
     //scoring
-    score = score + Math.round(frameCount/60);
+    score = score + Math.round(getFrameRate()/60);
     
     if(score>0 && score%100 === 0){
        checkPointSound.play() 
